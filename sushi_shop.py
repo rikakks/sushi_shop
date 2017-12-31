@@ -4,13 +4,13 @@ import sys
 
 class Shop:
     def __init__(self):
-        print("Welcome to Rikako's Sushi Shop.")
+        print("Welcome to Rikako's Sushi Shop.🍣")
         name = input("What is your name? ")
         print("Thank you for coming to our shop today, " + name + '!')
         return self.green_tea()
 
     def green_tea(self):
-        if input("Here will be some green tea for you. Type y to continue: "
+        if input("Here will be some green tea🍵 for you. Type y to continue: "
                  ).lower() == 'y':
             tea_image = Image.open("IMAGES/TEA.png")
             tea_image.show()
@@ -42,7 +42,7 @@ class Shop:
         order_bill = 0
         while True:
             cont_or_discont = input(
-                "Type 'o' for order, 'b' for bill, 't' for more green tea, and 's' for more soy sauce: "
+                "Type 'o' for order, 'b' for bill💵, 't' for more green tea🍵, and 's' for more soy sauce: "
             ).lower()
             if cont_or_discont == 'o' or cont_or_discont == "'o'":
                 take_order = input("Which sushi would you like? ").upper()
@@ -58,7 +58,7 @@ class Shop:
 
             elif cont_or_discont == 'b' or cont_or_discont == "'b'":
                 left_overs = input(
-                    "Thank you for eating at Rikako's Sushi Shop! Did you have any leftovers for takeout? Type 'y' for yes, and 'n' for no: "
+                    "Thank you for eating at Rikako's Sushi Shop!🍣 Did you have any leftovers for takeout? Type 'y' for yes, and 'n' for no: "
                 )
                 if left_overs == 'y' or left_overs == "'y'":
                     print("Okay, we will get you a take out box right away!")
@@ -76,10 +76,10 @@ class Shop:
                         "Please enter an integer between 0 - 100 for percentage of tip: "
                     ))), 2)
                 method = [
-                    '1. Credit/Debit Card',
-                    '2. Cash',
+                    '1. Credit/Debit Card💳',
+                    '2. Cash💵',
                     '3. Venmo',
-                    '4. Apple Pay',
+                    '4. Apple Pay🍎',
                 ]
                 print(method)
                 method_selected = method[int(
