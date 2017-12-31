@@ -71,21 +71,30 @@ class Shop:
                       str(round((order_bill * 0.15), 2)) + ", 20% = " +
                       str(round((order_bill * 0.20), 2)) + ", 25% = " + str(
                           round((order_bill * 0.25), 2)))
-                total = round(order_bill / 100 * (100 + int(
+                tip = int(
                     input(
                         "Please enter an integer between 0 - 100 for percentage of tip: "
-                    ))), 2)
+                    ))
+                if tip < 0 or tip > 100:
+                    print(
+                        "Percentage of tip must be an integer between 0 - 100."
+                    )
+                    return
+                else:
+                    pass
+                total = round(order_bill / 100 * (100 + tip), 2)
                 method = [
-                    '1. Credit/Debit Card💳',
-                    '2. Cash💵',
+                    '1. Credit/Debit Card💳  ',
+                    '2. Cash💵  ',
                     '3. Venmo',
-                    '4. Apple Pay🍎',
+                    '4. Apple Pay🍎  ',
+                    '5. Bitcoin',
                 ]
                 print(method)
                 method_selected = method[int(
                     input(
-                        "Please type a number between 1-4 for method of payment: "
-                    )) - 1]
+                        "For method of payment, please type a number between 1-"
+                        + str(len(method)) + ": ")) - 1]
                 print("Thank you for your payment. A total of: " + str(total) +
                       " USD was charged to your " + str(method_selected) +
                       ". Please come again!")
